@@ -214,7 +214,7 @@ export const Home = () => {
                 Send an Email
               </Button>
             </Link>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/ad77design?igsh=MWh6Zjk2MjlwdDU3bg==" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10 rounded-2xl h-16 px-12 text-lg">
                 Follow on Instagram
               </Button>
