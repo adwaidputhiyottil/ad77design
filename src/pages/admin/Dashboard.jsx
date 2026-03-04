@@ -30,7 +30,7 @@ import { MessageManager } from '../../components/admin/MessageManager';
  */
 
 export const Dashboard = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const { logout } = useAuth();
@@ -57,10 +57,10 @@ export const Dashboard = () => {
   return (
     <div className="flex h-screen bg-secondary/20">
       {/* Sidebar Overlay (Mobile) */}
-      {!sidebarOpen && (
+      {sidebarOpen && (
         <div 
           className="fixed inset-0 bg-black/50 z-40 lg:hidden backdrop-blur-sm" 
-          onClick={() => setSidebarOpen(true)}
+          onClick={() => setSidebarOpen(false)}
         />
       )}
 
