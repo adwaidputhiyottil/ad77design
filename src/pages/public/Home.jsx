@@ -75,13 +75,13 @@ export const Home = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <Link to="/projects">
-                <Button size="lg" className="w-full sm:w-auto h-16 px-10 text-lg rounded-2xl group">
+                <Button as="span" size="lg" className="w-full sm:w-auto h-16 px-10 text-lg rounded-2xl group">
                   View My Work
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
               <Link to="/contact">
-                <Button size="lg" variant="secondary" className="w-full sm:w-auto h-16 px-10 text-lg rounded-2xl">
+                <Button as="span" size="lg" variant="secondary" className="w-full sm:w-auto h-16 px-10 text-lg rounded-2xl">
                   Contact Me
                 </Button>
               </Link>
@@ -190,7 +190,7 @@ export const Home = () => {
               {profile?.bio || 'With a focus on sports aesthetics, I create designs that capture the energy and intensity of the game. My process is deeply collaborative, ensuring every pixel aligns with your brand strategy.'}
             </p>
             <Link to="/about">
-              <Button variant="outline" size="lg" className="rounded-2xl px-12">
+              <Button as="span" variant="outline" size="lg" className="rounded-2xl px-12">
                 Read My Story
               </Button>
             </Link>
@@ -210,12 +210,12 @@ export const Home = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center max-w-lg mx-auto">
             <Link to="/contact" className="w-full sm:w-auto">
-              <Button size="lg" className="w-full bg-white text-primary hover:bg-white/90 rounded-2xl h-16 px-12 text-lg">
+              <Button as="span" size="lg" className="w-full bg-white text-primary hover:bg-white/90 rounded-2xl h-16 px-12 text-lg">
                 Send an Email
               </Button>
             </Link>
             <a href="https://www.instagram.com/ad77design?igsh=MWh6Zjk2MjlwdDU3bg==" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-              <Button variant="outline" size="lg" className="w-full border-white/20 text-white hover:bg-white/10 rounded-2xl h-16 px-12 text-lg">
+              <Button as="span" variant="outline" size="lg" className="w-full border-white/20 text-white hover:bg-white/10 rounded-2xl h-16 px-12 text-lg">
                 Follow on Instagram
               </Button>
             </a>

@@ -147,7 +147,7 @@ export const About = () => {
                     I'm currently open for new projects and long-term partnerships.
                   </p>
                   <Link to="/contact">
-                    <Button className="bg-white text-primary hover:bg-white/90 w-full rounded-2xl h-14">
+                    <Button as="span" className="bg-white text-primary hover:bg-white/90 w-full rounded-2xl h-14">
                        Get in Touch
                     </Button>
                   </Link>

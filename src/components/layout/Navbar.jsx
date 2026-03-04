@@ -4,6 +4,7 @@ import { Menu, X, Palette } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
+import { Button } from '../ui/Button';
 
 /**
  * Navbar component
@@ -104,7 +105,7 @@ export const Navbar = () => {
                 </Link>
               ))}
               <Link to="/contact" onClick={() => setIsOpen(false)}>
-                <button className="w-full rounded-2xl h-14 font-black mt-6 bg-primary text-primary-foreground text-lg hover:opacity-90 transition-opacity">Hire Me</button>
+                <Button as="span" className="w-full rounded-2xl h-14 font-black mt-6 bg-primary text-primary-foreground text-lg hover:opacity-90 transition-opacity">Hire Me</Button>
               </Link>
             </div>
           </motion.div>

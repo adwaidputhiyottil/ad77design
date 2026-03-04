@@ -9,7 +9,7 @@ import { twMerge } from 'tailwind-merge';
 
 const cn = (...inputs) => twMerge(clsx(inputs));
 
-export const Button = React.forwardRef(({ className, variant = 'primary', size = 'md', ...props }, ref) => {
+export const Button = React.forwardRef(({ className, variant = 'primary', size = 'md', as: Component = 'button', ...props }, ref) => {
   const variants = {
     primary: "bg-primary text-primary-foreground hover:opacity-90 active:scale-95 shadow-sm",
     secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 active:scale-95",
@@ -26,7 +26,7 @@ export const Button = React.forwardRef(({ className, variant = 'primary', size =
   };
 
   return (
-    <button
+    <Component
       ref={ref}
       className={cn(
         "inline-flex items-center justify-center transition-all duration-200 disabled:opacity-50 disabled:pointer-events-none",
