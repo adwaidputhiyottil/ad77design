@@ -101,6 +101,7 @@ function App() {
 
           {/* Admin Routes */}
           <Route path="/login" element={<Login />} />
+          <Route path="/test-page" element={<div className="p-20 text-center font-bold">Routing is actually working!</div>} />
           <Route 
             path="/admin/*" 
             element={
