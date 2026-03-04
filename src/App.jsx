@@ -80,13 +80,25 @@ const SetupRequired = () => (
   </div>
 );
 
+// Loading Screen
+import { LoadingScreen } from './components/ui/LoadingScreen';
+import { AnimatePresence } from 'framer-motion';
+
 function App() {
+  const [isInitialLoading, setIsInitialLoading] = React.useState(true);
+
   if (!isSupabaseConfigured) {
     return <SetupRequired />;
   }
 
   return (
     <AuthProvider>
+      <AnimatePresence mode="wait">
+        {isInitialLoading && (
+          <LoadingScreen onComplete={() => setIsInitialLoading(false)} />
+        )}
+      </AnimatePresence>
+
       <Router>
         <ScrollToTop />
         <Routes>
