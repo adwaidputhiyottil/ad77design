@@ -10,7 +10,7 @@ import { ProjectCard } from '../../components/ui/ProjectCard';
  * Includes category filtering chips.
  */
 
-const CATEGORIES = ['All', 'Sports', 'Poster', 'Logo', 'Brand Identity', 'Illustration', 'Motion'];
+const CATEGORIES = ['All', 'Sports', 'Poster', 'Brand Identity', 'Illustration', 'Motion'];
 
 export const Projects = () => {
   const [projects, setProjects] = useState([]);

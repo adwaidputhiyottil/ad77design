@@ -262,7 +262,6 @@ export const ProjectManager = () => {
                    >
                       <option value="Sports">Sports</option>
                       <option value="Poster">Poster</option>
-                      <option value="Logo">Logo</option>
                       <option value="Brand Identity">Brand Identity</option>
                       <option value="Illustration">Illustration</option>
                       <option value="Motion">Motion</option>
@@ -496,7 +495,7 @@ export const ProjectManager = () => {
                      </div>
                   </td>
                   <td className="px-8 py-6 text-right">
-                    <div className="flex gap-2 justify-end opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="flex gap-2 justify-end opacity-60 group-hover:opacity-100 transition-opacity">
                       <button onClick={() => startEdit(p)} className="p-3 bg-white border border-border/40 rounded-xl hover:text-primary hover:shadow-md transition-all">
                         <Edit3 className="w-4 h-4" />
                       </button>
