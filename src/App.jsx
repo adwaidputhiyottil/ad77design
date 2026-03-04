@@ -79,8 +79,7 @@ const SetupRequired = () => (
     </div>
   </div>
 );
-
-// Loading Screen
+// Minimal Loading Screen
 import { LoadingScreen } from './components/ui/LoadingScreen';
 import { AnimatePresence } from 'framer-motion';
 
