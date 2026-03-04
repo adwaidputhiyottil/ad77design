@@ -56,7 +56,6 @@ export const Footer = () => {
             © {currentYear} Adwaid Designs. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <Link to="/admin" className="text-xs text-muted-foreground hover:text-primary">Admin Access</Link>
             <a href="#" className="text-xs text-muted-foreground hover:text-primary">Privacy Policy</a>
           </div>
         </div>
