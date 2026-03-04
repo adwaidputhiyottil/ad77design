@@ -80,9 +80,9 @@ export const Home = () => {
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-              <Link to="/about">
+              <Link to="/contact">
                 <Button size="lg" variant="secondary" className="w-full sm:w-auto h-16 px-10 text-lg rounded-2xl">
-                  About Me
+                  Contact Me
                 </Button>
               </Link>
             </div>
@@ -208,14 +208,14 @@ export const Home = () => {
           <p className="text-primary-foreground/70 text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
             I'm currently available for freelance work and collaborations. Let's create something together.
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Link to="/contact">
-              <Button size="lg" className="bg-white text-primary hover:bg-white/90 rounded-2xl h-16 px-12 text-lg">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center max-w-lg mx-auto">
+            <Link to="/contact" className="w-full sm:w-auto">
+              <Button size="lg" className="w-full bg-white text-primary hover:bg-white/90 rounded-2xl h-16 px-12 text-lg">
                 Send an Email
               </Button>
             </Link>
-            <a href="https://www.instagram.com/ad77design?igsh=MWh6Zjk2MjlwdDU3bg==" target="_blank" rel="noopener noreferrer">
-              <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10 rounded-2xl h-16 px-12 text-lg">
+            <a href="https://www.instagram.com/ad77design?igsh=MWh6Zjk2MjlwdDU3bg==" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+              <Button variant="outline" size="lg" className="w-full border-white/20 text-white hover:bg-white/10 rounded-2xl h-16 px-12 text-lg">
                 Follow on Instagram
               </Button>
             </a>

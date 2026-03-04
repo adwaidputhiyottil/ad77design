@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Send, User, MessageSquare, AlertCircle, CheckCircle2 } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 import { supabase } from '../../lib/supabase';
 import { Button } from '../../components/ui/Button';
 import { toast } from 'react-hot-toast';
 
 /**
  * Contact Page
- * Features a modern contact form with Supabase integration.
+ * Features a modern contact form with Supabase and EmailJS integration.
  */
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -24,16 +25,44 @@ export const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const { error } = await supabase.from('messages').insert([formData]);
+      // 1. Send Auto-Reply to User
+      if (import.meta.env.VITE_EMAILJS_AUTO_REPLY_TEMPLATE_ID) {
+        const autoReplyParams = {
+          from_name: 'Adwaid',
+          to_name: formData.name,
+          to_email: formData.email, // Standard
+          email: formData.email,    // Redundant for common templates
+          reply_to: 'adwaidpc0704@gmail.com', // Optional: so they reply to you
+          message: formData.message,
+        };
+
+        try {
+          await emailjs.send(
+            import.meta.env.VITE_EMAILJS_SERVICE_ID,
+            import.meta.env.VITE_EMAILJS_AUTO_REPLY_TEMPLATE_ID,
+            autoReplyParams,
+            import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+          );
+        } catch (emailError) {
+          console.error('EmailJS Error:', emailError);
+          // If email fails, we still want to save to Supabase
+          toast.error(`Email delivery failed: ${emailError.text || 'Check your configuration'}`);
+        }
+      }
+
+      // 2. Save to Supabase (Record keeping)
+      const { error: supabaseError } = await supabase.from('messages').insert([formData]);
       
-      if (error) throw error;
+      if (supabaseError) {
+        throw new Error(`Database error: ${supabaseError.message}`);
+      }
 
       setIsSuccess(true);
-      toast.success('Message sent successfully!');
+      toast.success('Message sent & saved successfully!');
       setFormData({ name: '', email: '', subject: '', message: '' });
-    } catch (error) {
-      console.error('Submission error:', error);
-      toast.error('Failed to send message. Please try again.');
+    } catch (err) {
+      console.error('Submission error:', err);
+      toast.error(err.message || 'Failed to send message. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -77,7 +106,9 @@ export const Contact = () => {
                   </div>
                   <div>
                     <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">Direct Email</p>
-                    <p className="text-lg font-bold text-primary">adwaidpc0704@gmail.com</p>
+                    <a href="mailto:adwaidpc0704@gmail.com" className="text-lg font-bold text-primary hover:text-primary/70 transition-colors">
+                      adwaidpc0704@gmail.com
+                    </a>
                   </div>
                 </div>
               </div>
